@@ -1,0 +1,41 @@
+// Description: Solve the HackerRank Problem given as a link below - 
+
+// https://www.hackerrank.com/challenges/java-generics/problem
+
+import java.io.IOException;
+import java.lang.reflect.Method;
+
+class Generic
+{
+
+ public <T> void printArray(T[] arr){
+       for(T element : arr){
+           System.out.println(element);
+       }
+   }
+}
+
+public class Solution {
+
+
+    public static void main( String args[] ) {
+        Generic myGeneric = new Generic();
+        Integer[] intArray = { 1, 2, 3 };
+        String[] stringArray = {"Hello", "World"};
+        myGeneric.printArray(intArray);
+        myGeneric.printArray(stringArray);
+        int count = 0;
+
+        for (Method method : Generic.class.getDeclaredMethods()) {
+            String name = method.getName();
+
+            if(name.equals("printArray"))
+                count++;
+        }
+
+        if(count > 1){
+            System.out.println("Method overloading is not allowed!");
+        }
+      
+    }
+}

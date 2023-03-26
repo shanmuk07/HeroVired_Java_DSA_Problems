@@ -1,0 +1,23 @@
+// Description: Solve the HackerRank Problem given as a link below - 
+
+// https://www.hackerrank.com/challenges/java-anagrams/problem
+
+import java.util.Scanner;
+
+public class Solution {
+
+    static boolean isAnagram(String a, String b) {
+        // Complete the function
+        if(a.length() != b.length()){
+        return false;
+    }
+
+        char[] arrA = a.toLowerCase().toCharArray();
+        char[] arrB = b.toLowerCase().toCharArray();
+        java.util.Arrays.sort(arrA);
+        java.util.Arrays.sort(arrB);
+        return java.util.Arrays.equals(arrA, arrB);
+    }
+
+
+

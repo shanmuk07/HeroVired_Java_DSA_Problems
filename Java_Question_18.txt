@@ -1,0 +1,35 @@
+// Description: Solve the HackerRank Problem given as a link below - 
+
+// https://www.hackerrank.com/challenges/java-string-tokens/problem
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        ArrayList<String> ar=new ArrayList<>();
+        String st="";
+        for(int i=0;i<s.length();i++)
+        {
+            char c=s.charAt(i);
+            if(Character.isAlphabetic(c))
+            st+=c+"";
+            else
+            {
+                if(!st.equals(""))
+                ar.add(st);
+                st="";
+            }
+        }
+        if(!st.equals(""))
+        ar.add(st);
+        System.out.println(ar.size());
+        for(String str:ar)
+        System.out.println(str);
+        scan.close();
+    }
+}
+

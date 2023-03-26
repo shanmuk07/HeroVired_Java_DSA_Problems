@@ -1,0 +1,40 @@
+// Description: Solve the HackerRank Problem given as a link below - 
+
+// https://www.hackerrank.com/challenges/java-list/problem
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        ArrayList<Integer> list = new  ArrayList<Integer>();
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            int a=sc.nextInt();
+            list.add(a);
+        }
+      
+        int k=sc.nextInt();
+        for(int i=0;i<k;i++)
+        {
+            String str = sc.next();
+            
+            if(str.equals("Insert")){
+                int p=sc.nextInt();
+                int ele=sc.nextInt();
+                list.add(p,ele);
+            }
+            if(str.equals("Delete")){
+                int q=sc.nextInt();
+                list.remove(q);
+            }
+        }
+        for(Integer i:list)
+        System.out.print(i+" ");
+    }
+}
